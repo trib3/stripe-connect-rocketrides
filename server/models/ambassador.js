@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
-const Contract = require('./ride');
+const Contract = require('./contract');
 
 // Use native promises.
 mongoose.Promise = global.Promise;
@@ -52,7 +52,7 @@ AmbassadorSchema.statics.getFirstOnboarded = function() {
     .exec();
 };
 
-// Get the latest fully onboarded pilot.
+// Get the latest fully onboarded ambassador.
 AmbassadorSchema.statics.getLatestOnboarded = function() {
   return Ambassador.findOne({ stripeAccountId: { $ne: null } })
     .sort({ created: -1 })
