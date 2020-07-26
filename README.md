@@ -28,13 +28,15 @@ Install dependencies using npm (or yarn):
     cd server
     npm install
 
-Copy the configuration file and add  Tribe's test Stripe API keys [Stripe API keys](https://dashboard.stripe.com/account/apikeys) and [client ID](https://dashboard.stripe.com/account/applications/settings):
-
-    cp config.default.js config.js
 
 Make sure MongoDB is running. If you're using Homebrew on macOS:
 
-    brew services start mongodb
+    # Install once
+    brew tap mongodb/brew
+    brew install mongodb-community 
+
+    # Start
+    brew services start mongodb-community
 
 Run the app:
 
