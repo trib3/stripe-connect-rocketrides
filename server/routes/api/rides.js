@@ -4,7 +4,7 @@ const config = require('../../config');
 const stripe = require('stripe')(config.stripe.secretKey);
 const express = require('express');
 const router = express.Router();
-const Pilot = require('../../models/pilot');
+const Pilot = require('../../models/ambassador');
 const Passenger = require('../../models/passenger');
 const Ride = require('../../models/ride');
 

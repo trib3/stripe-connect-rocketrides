@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const Pilot = require('../../models/pilot');
+const Pilot = require('../../models/ambassador');
 const Ride = require('../../models/ride');
 const Passenger = require('../../models/passenger');
 
@@ -39,7 +39,7 @@ router.get('/dashboard', pilotRequired, async (req, res) => {
     return a + b.amountForPilot();
   }, 0);
   const [showBanner] = req.flash('showBanner');
-  // There is one balance for each currencies used: as this 
+  // There is one balance for each currencies used: as this
   // demo app only uses USD we'll just use the first object
   res.render('dashboard', {
     pilot: pilot,
@@ -158,7 +158,7 @@ router.post('/signup', async (req, res, next) => {
       const errors = Object.keys(err.errors).map(field => err.errors[field].message);
       res.render('signup', { step: 'account', error: errors[0] });
     }
-  } 
+  }
   else {
     try {
       // Try to update the logged-in pilot using the newly entered profile data
