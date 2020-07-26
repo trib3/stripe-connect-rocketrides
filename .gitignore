@@ -1,17 +1,12 @@
-# Rocket Rides
+# Config
 config.js
 
 # macOS
 .DS_Store
 
-# Xcode
-xcuserdata/
+# Pycharm
+.idea/
 
-# VS Code
-.vscode
-
-# Cocoapods
-Pods/
 
 # Logs
 logs
