@@ -4,7 +4,7 @@ const config = require('../../config');
 const stripe = require('stripe')(config.stripe.secretKey);
 const express = require('express');
 const router = express.Router();
-const Passenger = require('../../models/passenger');
+const Passenger = require('../../models/brand');
 
 /* For this demo, we assume that we're always authenticating the
  * latest passenger. In a production app, you would also typically

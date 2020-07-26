@@ -8,7 +8,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const Pilot = require('../../models/ambassador');
 const Ride = require('../../models/ride');
-const Passenger = require('../../models/passenger');
+const Passenger = require('../../models/brand');
 
 // Middleware: require a logged-in pilot
 function pilotRequired(req, res, next) {
