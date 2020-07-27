@@ -29,7 +29,7 @@ AmbassadorSchema.methods.displayName = function() {
 // List contracts from the past month for the ambassador.
 AmbassadorSchema.methods.listRecentContracts = async function() {
   const monthAgo = Date.now() - (30*24*60*60*1000);
-  return Contract.find({ ambassador: this, created: { $gte: monthAgo } })
+  return Contract.find({ ambassadorEmail: this.email, created: { $gte: monthAgo } })
     .populate('brand')
     .sort({ created: -1 })
     .exec();

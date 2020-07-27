@@ -63,7 +63,7 @@ router.post('/contracts', ambassadorRequired, async (req, res, next) => {
   const brand = await Brand.getRandom();
   // Create a new ride for the ambassador and this random brand
   const contract = new Contract({
-    ambassador: ambassador.id,
+    ambassadorEmail: ambassador.email,
     brand: brand.id,
     // Generate a random amount between $10 and $100 for this ride
     amount: getRandomInt(1000, 10000),
@@ -85,7 +85,7 @@ router.post('/accept_contract', ambassadorRequired, async (req, res, next) => {
   // Find a random brand
   const contractID = Object.assign({}, req.body).contractID;
   const contract = await Contract.findOne({_id: ObjectId(contractID)});
-  const ambassador = await Ambassador.findOne({_id: ObjectId(contract.ambassador)})
+  const ambassador = await Ambassador.findOne({email: contract.ambassadorEmail})
   try {
 
     // const topup = await stripe.topups.create({
@@ -95,17 +95,17 @@ router.post('/accept_contract', ambassadorRequired, async (req, res, next) => {
     //     }
     //   )
     // Create a charge and set its destination to the pilot's account
-    const transfer = await stripe.transfers.create({
+    const transfer = await stripe.charges.create({
       amount: contract.amount,
       currency: 'usd',
       description: contract.postLink,
       metadata: {'contractID': contract.id},
       destination: ambassador.stripeAccountId,
+      source: 'btok_us_verified',
     });
     // Add the Stripe charge reference to the ride and save it
     contract.stripeTransferId = transfer.id;
     contract.accepted = true;
-    contract.save();
   } catch (err) {
     console.log(err);
     // Return a 402 Payment Required error code
@@ -125,6 +125,7 @@ router.post('/accept_contract', ambassadorRequired, async (req, res, next) => {
 router.get('/signup', (req, res) => {
   let step = 'account';
   let displayName = '';
+  console.log(req.user);
   // Naive way to identify which step we're on: check for the presence of user profile data
   if (req.user) {
     if (!req.user.firstName || !req.user.lastName) {
@@ -159,7 +160,8 @@ router.post('/signup', async (req, res, next) => {
   let ambassador = req.user;
   if (!ambassador) {
     try {
-      // Try to create and save a new pilot
+      // Try to create and save a new ambassador
+
       ambassador = new Ambassador(body);
       ambassador = await ambassador.save()
       // Sign in and redirect to continue the signup process

@@ -8,7 +8,8 @@ mongoose.Promise = global.Promise;
 
 // Define the Contract schema.
 const ContractSchema = new Schema({
-  ambassador: { type : Schema.ObjectId, ref : 'Ambassador', required: true },
+  // ambassador: { type : Schema.ObjectId, ref : 'Ambassador', required: true },
+  ambassadorEmail: { type : String, required: true },
   brand: { type : Schema.ObjectId, ref : 'Brand', required: true },
   postLink: { type: String, required: true },
   amount: Number,

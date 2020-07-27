@@ -74,8 +74,8 @@ app.use('/account/stripe', require('./routes/ambassadors/stripe'));
 
 // API routes for rides and passengers used by the mobile app
 app.use('/api/settings', require('./routes/api/settings'));
-app.use('/api/rides', require('./routes/api/contracts'));
-app.use('/api/passengers', require('./routes/api/brands'));
+app.use('/api/contracts', require('./routes/api/contracts'));
+app.use('/api/brands', require('./routes/api/brands'));
 
 // Index page for Rocket Rides
 app.get('/', (req, res) => {
