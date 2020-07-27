@@ -4,30 +4,29 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no')
     meta(name='twitter:card', content='summary')
-    meta(name='twitter:site', content='@stripe')
-    meta(name='twitter:title', content='Rocket Rides')
-    meta(name='twitter:description', content='Rocket Rides is an on-demand platform built on top of Stripe Connect.')
-    meta(name='twitter:image', content='https://rocketrides.io/images/rocketrides.png')
-    title Rocket Rides
-    link(rel='stylesheet', type='text/css', href='/stylesheets/rocketrides.css')
+    meta(name='twitter:site', content='@TribeDynamics')
+    meta(name='twitter:title', content='Tribe Dynamics')
+    meta(name='twitter:description', content='Tribe Dynamics is an influencer relationship platform.')
+    title Tribe Dynamics
+    link(rel='stylesheet', type='text/css', href='/stylesheets/tribedynamics.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Barlow:500,600')
     link(rel='icon', type='image/png', sizes='64x64', href='/images/favicon.png')
 
   body
     header
       #top
-        if pilot
+        if ambassador
           .logo
-            a.rocketrides.mark(href='/')
+            a.tribedynamics.mark(href='/')
           .links
-            if pilot.stripeAccountId
-              a(href='/pilots/dashboard') Dashboard
-            a(href='/pilots/logout') Log out
+            if ambassador.stripeAccountId
+              a(href='/ambassadors/dashboard') Dashboard
+            a(href='/ambassadors/logout') Log out
         else
           .logo
-            a.rocketrides(href='/')
+            a.tribedynamics(href='/')
           .links
-            a(href='/pilots/login') Log in
+            a(href='/ambassadors/login') Log in
       block header
 
     #content
@@ -36,4 +35,4 @@ html
     footer
       block footer
 
-    script(src='/javascripts/rocketrides.js')
+    script(src='/javascripts/tribedynamics.js')

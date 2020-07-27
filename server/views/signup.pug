@@ -22,92 +22,35 @@ block content
 
       when 'profile'
         form(method='POST', autocomplete='off')
-          h4.pilot-header Account type
-          .pilot-options
-            label.pilot-option
-              input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
-              span Independent pilot
-            label.pilot-option
-              input(type='radio', name='pilot-type', value='company', id='po-company')
-              span Company of pilots
 
-          h4.pilot-header#account-info Personal information
+          h4.ambassador-header#account-info Personal information
           fieldset
-            .row.pilot-info.individual(label='* First Name')
+            .row.ambassador-info.individual(label='* First Name')
               input(type='text', name='firstName', placeholder='Jane')
-            .row.pilot-info.individual(label='* Last Name')
+            .row.ambassador-info.individual(label='* Last Name')
               input(type='text', name='lastName', placeholder='Diaz')
-            .row.pilot-info.company.hidden(label='* Company Name')
-              input(type='text', name='businessName', placeholder='Infinity & Beyond LLC')
-            .row.select(label='Country')
-              select(name='country')
-                option(value='AU') Australia
-                option(value='AT') Austria
-                option(value='BE') Belgium
-                option(value='CA') Canada
-                option(value='DK') Denmark
-                option(value='EE') Estonia
-                option(value='FI') Finland
-                option(value='FR') France
-                option(value='DE') Germany
-                option(value='GR') Greece
-                option(value='HK') Hong Kong SAR China
-                option(value='IE') Ireland
-                option(value='IT') Italy
-                option(value='JP') Japan
-                option(value='LV') Latvia
-                option(value='LT') Lithuania
-                option(value='LU') Luxembourg
-                option(value='NL') Netherlands
-                option(value='NZ') New Zealand
-                option(value='NO') Norway
-                option(value='PL') Poland
-                option(value='PT') Portugal
-                option(value='SG') Singapore
-                option(value='SK') Slovakia
-                option(value='SI') Slovenia
-                option(value='ES') Spain
-                option(value='SE') Sweden
-                option(value='CH') Switzerland
-                option(value='GB') United Kingdom
-                option(value='US', selected=true) United States
           aside * Indicates required fields
-          h4 Rocket information
-          fieldset
-            .row(label='Rocket')
-              input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
-            .row(label='License')
-              input(type='text', name='rocket[license]', placeholder='FUTURE 7', value='FUTURE 7')
-            .row.select(label='Color')
-              select(name='rocket[color]')
-                option(value='red') Red
-                option(value='orange') Orange
-                option(value='yellow') Yellow
-                option(value='green') Green
-                option(value='blue', selected) Blue
-                option(value='purple') Purple
-                option(value='black') Black
-                option(value='white') White
           h4 Payment information
           .stripe-information
             p We use Stripe to make sure you get paid on time and to keep your personal bank and details secure. Click #[strong Save and continue] to set up your payments on Stripe.
-            
+
           input.primary(type='submit', value='Save and continue')
 
       when 'payments'
         h1.title Connect your account to Stripe
+        p You're all signed up #{displayName}
         p We use Stripe to make sure you get paid on time and keep your personal and bank details secure.
-        a.button.primary(href='/pilots/stripe/authorize') Set up payments
+        a.button.primary(href='/account/stripe/authorize') Set up payments
 
 block footer
   .annotation.info
 
     case step
       when 'account'
-        p To get started, Rocket Rides will create an account for their pilots on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
+        p To get started, Tribe creates an account for ambassadors. We are using simple email and password here but maybe we should do something more robust. We are also going to link to terms and conditions here, and state that whenever a user accepts payment related to a post they agree to these. Might need to sort this out because I'm not sure how legally robust this is, should have paid attention to Legally Blonde more closely I guess.
 
       when 'profile'
-        p The platform can choose to request additional information from the user before it collects any payments details. Here, Rocket Rides asks a few questions about pilots and their rockets. This information will be stored in the platform’s database.
+        p We're asking here for First and Last name but ask for more?
 
       when 'payments'
-        p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]
+        p We use #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay ambassadors. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. Currently we're in test mode, so no real payments are going through and are using the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]

@@ -1,5 +1,5 @@
 /**
- * Rocket Rides CSS stylesheet
+ * Tribe CSS stylesheet
  */
 
 * {
@@ -61,7 +61,7 @@ header {
   width: 100%;
   background-image: url('/images/header.jpg');
   background-size: cover;
-  background-color: black;
+  background-color: #8362E5;
   color: #fff;
 }
 
@@ -111,12 +111,12 @@ a.arrow {
 #top .logo {
   flex: 1;
 }
-#top a.rocketrides {
+#top a.tribedynamics {
   display: inline-block;
   min-width: 215px;
   height: 20px;
   padding-left: 75px;
-  background: url(/images/rocketrides.svg) left center no-repeat;
+  background: url(/images/TDLogo.svg) left center no-repeat;
 }
 
 #top .links a {
@@ -142,7 +142,7 @@ h1.title.short-form {
 
 /* Banners */
 .banner {
-  background: #15b67c;
+  background: #8362E5;
   color: white;
   width: 100%;
   min-height: 44px;
@@ -162,7 +162,7 @@ footer {
 }
 
 .annotation {
-  background: #fff;
+  background: #8362E5;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -192,7 +192,7 @@ footer {
 .annotation p {
   font-size: 15px;
   font-weight: 400;
-  color: #6a7c94;
+  color: #ffffff;
 }
 
 .annotation.info strong {
@@ -201,7 +201,7 @@ footer {
 
 .annotation a {
   font-weight: 400;
-  color: #666ee8;
+  color: rgba(232, 233, 239, 0.35);
 }
 
 .annotation a.github {
@@ -291,14 +291,14 @@ footer {
   margin: 30px 0 15px;
   font-size: 19px;
   font-weight: 500;
-  color: #32315e;
+  color: #8362E5;
   text-align: center;
 }
 
 .form p {
   margin: 0 0 30px;
   font-size: 17px;
-  color: #525f7f;
+  color: #8362E5;
   line-height: 1.5;
   text-align: center;
 }
@@ -309,7 +309,7 @@ footer {
 
 .form h4 {
   margin: 15px 0;
-  color: #8798ab;
+  color: #8362E5;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -329,7 +329,7 @@ footer {
   margin-top: 10px;
   line-height: 20px;
   font-size: 13px;
-  color: #8798ab;
+  color: #8362E5;
   padding: 0 30px;
 }
 
@@ -426,7 +426,7 @@ fieldset .row select {
 }
 
 fieldset .row select:focus {
-  color: #00b67c;
+  color: #8362E5;
 }
 
 fieldset .row.date span {
@@ -486,7 +486,7 @@ input[type='submit'].primary {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: #15b67c;
+  background: #8362E5;
   color: white;
   height: 44px;
   margin: 30px 0 0 0;
@@ -503,7 +503,7 @@ input[type='submit'].primary:hover {
 button.primary:disabled,
 .button.primary:disabled,
 input[type='submit'].primary:disabled {
-  background: #e6ebf1;
+  background: #8362E5;
   color: #aab7c4;
   cursor: default;
 }
@@ -547,7 +547,7 @@ form a.button {
 }
 
 .stripe-information p {
-  color: #525f7f;
+  color: #db4ebc;
   font-size: 14px;
   text-align: left;
   margin: 0;
@@ -567,7 +567,7 @@ form a.button {
 }
 
 .illustration .rocket {
-  background: url(/images/rocketrides-illustration.svg) center center no-repeat;
+  background: url(/images/TDLogo.svg) center center no-repeat;
   background-size: 120px 120px;
   transform: rotate(5deg);
 }
@@ -591,7 +591,7 @@ form a.button {
   padding: 60px 0 80px;
 }
 
-.intro .pilots {
+.intro .ambassadors {
   flex-direction: column;
 }
 
@@ -628,7 +628,7 @@ form a.button {
   background-repeat: no-repeat;
 }
 
-.features section.schedule {
+.features section.stripe {
   background-image: url(/images/feature-schedule.svg);
 }
 
@@ -696,7 +696,7 @@ form a.button {
 }
 
 .user .block a {
-  color: #219f72;
+  color: #8362E5;
 }
 
 .user .block.profile {
@@ -738,7 +738,7 @@ form a.button {
   margin: 0 0 35px;
 }
 
-.form label.pilot-option {
+.form label.ambassador-option {
   width: auto;
   padding: 0;
   cursor: pointer;
@@ -746,7 +746,7 @@ form a.button {
   margin: 17px 0;
 }
 
-.pilot-option input {
+.ambassador-option input {
   display: none;
   height: 0;
   width: 0;
@@ -756,7 +756,7 @@ form a.button {
   -webkit-appearance: none;
 }
 
-.pilot-option input + span {
+.ambassador-option input + span {
   display: flex;
   position: relative;
   align-items: center;
@@ -766,7 +766,7 @@ form a.button {
   padding-left: 10px;
 }
 
-.pilot-option input + span:before {
+.ambassador-option input + span:before {
   content: '';
   display: inline-block;
   position: relative;
@@ -778,7 +778,7 @@ form a.button {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
-.pilot-option input:checked + span:after {
+.ambassador-option input:checked + span:after {
   content: '';
   display: flex;
   position: absolute;
@@ -786,28 +786,34 @@ form a.button {
   right: calc(100% - 15px);
   width: 10px;
   height: 10px;
-  background: #15b67c;
+  background: #8362E5;
   border-radius: 10px;
 }
 
-.row.pilot-info.hidden {
+.row.ambassador-info.hidden {
   display: none;
 }
 
-/* Ride history */
-.rides {
+/* Contract history */
+
+.terms {
+  width: 50%;
+  padding: 30px 30px 30px 30px;
+}
+
+.contracts {
   width: 100%;
   margin: 0 auto;
   align-items: flex-start;
 }
 
-.rides h4 {
+.contracts h4 {
   margin-bottom: 14px;
   color: #292f45;
   font-weight: 500;
 }
 
-.rides .no-rides {
+.contracts .no-contracts {
   width: 100%;
   min-height: 250px;
   background: #edf3f7;
@@ -817,12 +823,12 @@ form a.button {
   align-items: center;
 }
 
-.rides .no-rides .rocket {
+.contracts .no-contracts .rocket {
   width: 52px;
   height: 52px;
   background-image: url(/images/rocket.svg);
 }
-.rides .no-rides h1 {
+.contracts .no-contracts h1 {
   color: #525f7f;
   font-size: 24px;
   font-weight: 400;
@@ -831,66 +837,63 @@ form a.button {
   margin-bottom: 10px;
 }
 
-.rides .no-rides h2 {
+.contracts .no-contracts h2 {
   color: #8898aa;
   font-size: 13px;
   font-weight: 500;
   text-align: center;
 }
 
-.rides .list {
+.contracts .list {
   width: 100%;
   background-color: #fff;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
 
-.rides .list .row {
+.contracts .list .row {
   display: flex;
   align-items: center;
   position: relative;
   width: 100%;
 }
 
-.rides .list .row + .row {
+.contracts .list .row + .row {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.rides .list .cell {
-  flex: 1;
+.contracts .list .cell {
+  flex-grow: 1;
   position: relative;
   padding: 15px 20px;
   color: #82909b;
   font-size: 15px;
 }
 
-.rides .list .cell.name {
-  flex: 2;
-  padding-left: 60px;
+.contracts .list .cell.name {
+  flex-basis: 20%;
   color: #313b3f;
   font-weight: 500;
 }
 
-.rides .list .cell.name::before {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 20px;
-  top: 50%;
-  margin-top: -12px;
-  border-radius: 50%;
-  background-image: url(/images/avatar-small.svg);
-  box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
-    0 1px 3px -1px rgba(0, 0, 0, 0.3);
+.contracts .list .postLink {
+  flex-basis: 40%;
+  color: #313b3f;
+  font-weight: 500;
 }
 
-.rides .list .cell.date {
-  flex: 1.5;
+.contracts .list .accepted {
+  flex-basis: 20%;
+  color: #313b3f;
+  font-weight: 500;
 }
 
-.rides .list .cell.price {
-  flex: 1;
+.contracts .list .cell.date {
+  flex-basis: 10%;
+}
+
+.contracts .list .cell.amount {
+  flex-basis: 10%;
   font-weight: 500;
   text-align: right;
 }
@@ -1111,7 +1114,7 @@ form a.button {
     padding-bottom: 120px;
   }
 
-  .rides {
+  .contracts {
     margin: 0 0 15px;
   }
 
@@ -1162,21 +1165,21 @@ form a.button {
     margin: 0;
   }
 
-  .rides .list .cell.name {
+  .contracts .list .cell.name {
     flex: 1;
     padding-right: 5px;
     padding-left: 15px;
   }
 
-  .rides .list .cell.name::before {
+  .contracts .list .cell.name::before {
     display: none;
   }
 
-  .rides .list .cell.date {
+  .contracts .list .cell.date {
     padding: 10px 5px;
   }
 
-  .rides .list .cell.price {
+  .contracts .list .cell.price {
     flex: 0.6;
     padding-left: 5px;
   }
@@ -1201,4 +1204,16 @@ form a.button {
     transform: none;
     opacity: 1;
   }
+}
+
+
+/*Terms*/
+
+.terms-page.h2 {
+  padding-top: 50px;
+}
+
+
+ol > li {
+    margin-left: 20px;
 }

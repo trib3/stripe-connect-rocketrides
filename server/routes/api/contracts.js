@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 const Pilot = require('../../models/ambassador');
 const Passenger = require('../../models/brand');
-const Ride = require('../../models/ride');
+const Ride = require('../../models/contract');
 
 /* For this demo, we assume that we're always authenticating the
  * latest passenger. In a production app, you would also typically
